@@ -13,7 +13,7 @@
     "coveralls": "^2.11.12",
     "nyc": "^8.1.0",
     "snazzy": "^4.0.1",
-    "spike-core": "^0.11.2",
+    "spike-core": "^0.12.0",
     "spike-html-standards": "^0.3.5",
     "standard": "^8.0.0"
   },
