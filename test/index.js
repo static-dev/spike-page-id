@@ -2,7 +2,7 @@ const pageId = require('..')
 const path = require('path')
 const {readFileSync} = require('fs')
 const Spike = require('spike-core')
-const htmlStandards = require('spike-html-standards')
+const htmlStandards = require('reshape-standard')
 const test = require('ava')
 
 test.cb('basic', (t) => {
@@ -10,8 +10,10 @@ test.cb('basic', (t) => {
   const proj = new Spike({
     root,
     matchers: { html: '**/*.sgr' },
-    entries: { main: [path.join(root, 'main.js')] },
-    reshape: (ctx) => htmlStandards({ webpack: ctx, locals: { pageId: pageId(ctx) } })
+    entry: { main: [path.join(root, 'main.js')] },
+    reshape: htmlStandards({
+      locals: (ctx) => { return { pageId: pageId(ctx) } }
+    })
   })
 
   proj.on('error', t.end)
@@ -20,6 +22,7 @@ test.cb('basic', (t) => {
     const f2 = readFileSync(path.join(root, 'public/nested/index.html'), 'utf8')
     t.is(f1.trim(), '<p>index</p>')
     t.is(f2.trim(), '<p>nested-index</p>')
+    proj.clean()
     t.end()
   })
 
