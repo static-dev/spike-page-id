@@ -15,7 +15,7 @@
     "snazzy": "^6.0.0",
     "spike-core": "^0.13.0",
     "spike-html-standards": "^0.3.5",
-    "standard": "^8.0.0"
+    "standard": "^9.0.0"
   },
   "engines": {
     "node": ">= 6"
