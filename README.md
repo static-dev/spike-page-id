@@ -25,10 +25,9 @@ const htmlStandards = require('spike-html-standards')
 const pageId = require('spike-page-id')
 
 module.exports = {
-  // ...other config...
+  // other config…
   reshape: (ctx) => {
     return htmlStandards({
-      webpack: ctx,
       locals: { pageId: pageId(ctx) }
     })
   }
@@ -37,12 +36,12 @@ module.exports = {
 
 Now in your html, let's say it's called `index.sgr`:
 
-```jade
+```
 html
   head
     title My page
   body(id='{{ pageId }}')
-    p hello world!
+    p hello world
 ```
 
 This will render something like:
@@ -53,7 +52,7 @@ This will render something like:
     <title>My page</title>
   </head>
   <body id='index'>
-    <p>hello world!</p>
+    <p>hello world</p>
   </body>
 </html>
 ```
@@ -63,7 +62,7 @@ If you are working with a page that's nested inside other folders, it will inclu
 - `views/index.sgr` > `index`
 - `views/posts/welcome.sgr` > `posts-welcome`
 
-...and that's about it!
+…and that's about it!
 
 ### License & Contributing
 

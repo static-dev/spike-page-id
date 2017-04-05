@@ -1,7 +1,7 @@
 {
   "name": "spike-page-id",
   "description": "generates a css-friendly page identifier from a webpack loader context",
-  "version": "0.1.0",
+  "version": "0.2.0-0",
   "author": "Jeff Escalante",
   "ava": {
     "verbose": "true",
@@ -12,9 +12,9 @@
     "ava": "^0.19.0",
     "coveralls": "^2.11.12",
     "nyc": "^10.0.0",
+    "reshape-standard": "^1.0.0",
     "snazzy": "^6.0.0",
-    "spike-core": "^0.13.0",
-    "spike-html-standards": "^0.3.5",
+    "spike-core": "^1.0.0",
     "standard": "^10.0.0"
   },
   "engines": {
@@ -25,9 +25,9 @@
   "main": "lib",
   "repository": "static-dev/spike-page-id",
   "scripts": {
-    "test": "nyc ava",
-    "lint": "standard | snazzy",
     "coverage": "nyc ava && nyc report --reporter=html && open ./coverage/index.html",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "standard | snazzy",
+    "test": "nyc ava"
   }
 }
