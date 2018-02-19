@@ -15,7 +15,7 @@
     "reshape-standard": "^3.3.0",
     "snazzy": "^7.0.0",
     "spike-core": "^2.0.0",
-    "standard": "^10.0.3"
+    "standard": "^11.0.0"
   },
   "engines": {
     "node": ">= 6"
